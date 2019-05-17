@@ -49,12 +49,13 @@ RUN git clone https://github.com/centre-for-virus-research/weeSAM.git
 
 RUN wget -O lofreq-2.1.2.tgz https://sourceforge.net/projects/lofreq/files/lofreq_star-2.1.2_linux-x86-64.tgz/download
 RUN tar zxvf lofreq-2.1.2.tgz
-RUN ln -s ${pwd}/lofreq-2.1.2/bin/* /usr/bin
+RUN mkdir /usr/bin/lofreq
+RUN ln -s ${pwd}/lofreq-2.1.2/bin/ /usr/bin/lofreq
 
 ## Diversi tools
 
 RUN git clone https://github.com/josephhughes/DiversiTools.git
-RUN ln -s ${pwd}/DiversiTools/bin/* /usr/bin
+#RUN ln -s ${pwd}/DiversiTools/bin /usr/bin/DiversiTools
 
 ## ClustalW
 
@@ -84,13 +85,12 @@ RUN apt-get install -y abyss
 WORKDIR /tmp/
 RUN wget http://cab.spbu.ru/files/release3.13.1/SPAdes-3.13.1-Linux.tar.gz
 RUN tar zxvf SPAdes-3.13.1-Linux.tar.gz
-RUN ln -s ${pwd}/SPAdes-3.13.1-Linux/bin/* /usr/bin
+RUN ln -s ${pwd}/SPAdes-3.13.1-Linux/bin /usr/bin/SPAdes
 
 ## Mira
 
 RUN wget -O mira_4.0.2.tar.bz2 https://sourceforge.net/projects/mira-assembler/files/MIRA/stable/mira_4.0.2_linux-gnu_x86_64_static.tar.bz2/download
 RUN bzip2 -d mira_4.0.2.tar.bz2
-RUN tar xvf mira_4.0.2
 RUN ln -s ${tmp}/mira_4.0.2_linux-gnu_x86_64_static/bin/* /usr/bin
 
 ## QUAST
@@ -152,5 +152,15 @@ RUN tar zxvf GARM_v0.7.5.tar.gz
 ## MetaPhlan
 
 ## Diamond
+RUN wget http://github.com/bbuchfink/diamond/releases/download/v0.9.24/diamond-linux64.tar.gz
+RUN tar xzf diamond-linux64.tar.gz
+RUN ln -s ${tmp}/diamond/usr/bin
 
 ## Krona Tools
+
+RUN wget https://github.com/marbl/Krona/releases/download/v2.7.1/KronaTools-2.7.1.tar
+RUN tar xvf KronaTools-2.7.1.tar
+WORKDIR KronaTools-2.7.1
+RUN ./install.pl
+
+WORKDIR /tmp
