@@ -91,7 +91,7 @@ RUN ln -s ${pwd}/SPAdes-3.13.1-Linux/bin /usr/bin/SPAdes
 
 RUN wget -O mira_4.0.2.tar.bz2 https://sourceforge.net/projects/mira-assembler/files/MIRA/stable/mira_4.0.2_linux-gnu_x86_64_static.tar.bz2/download
 RUN bzip2 -d mira_4.0.2.tar.bz2
-RUN ln -s ${tmp}/mira_4.0.2_linux-gnu_x86_64_static/bin/* /usr/bin
+RUN ln -s ${pwd}/mira_4.0.2_linux-gnu_x86_64_static/bin/* /usr/bin
 
 ## QUAST
 
@@ -144,7 +144,7 @@ RUN git clone https://github.com/marbl/metAMOS.git
 
 RUN wget -O ribopicker-0.4.3.tar.gz https://sourceforge.net/projects/ribopicker/files/standalone/ribopicker-standalone-0.4.3.tar.gz/download
 RUN tar zxvf ribopicker-0.4.3.tar.gz
-RUN ln -s ${tmp}/ribopicker-standalone-0.4.3/ribopicker.pl /usr/bin
+RUN ln -s ${pwd}/ribopicker-standalone-0.4.3/ribopicker.pl /usr/bin
 ## GARM
 RUN wget -O GARM_v0.7.5.tar.gz https://sourceforge.net/projects/garm-meta-assem/files/GARM_v0.7.5.tar.gz/download
 RUN tar zxvf GARM_v0.7.5.tar.gz
@@ -154,7 +154,7 @@ RUN tar zxvf GARM_v0.7.5.tar.gz
 ## Diamond
 RUN wget http://github.com/bbuchfink/diamond/releases/download/v0.9.24/diamond-linux64.tar.gz
 RUN tar xzf diamond-linux64.tar.gz
-RUN ln -s ${tmp}/diamond/usr/bin
+RUN ln -s ${pwd}/diamond/usr/bin
 
 ## Krona Tools
 
