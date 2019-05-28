@@ -164,3 +164,37 @@ WORKDIR KronaTools-2.7.1
 RUN ./install.pl
 
 WORKDIR /tmp
+
+
+## Trimmomatic
+
+RUN wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.36.zip
+RUN unzip Trimmomatic-0.36.zip
+ENV TRIMMOMATIC /tmp/Trimmomatic-0.36/trimmomatic-0.36.jar
+
+## Abricate
+
+RUN apt-get install -y emboss bioperl ncbi-blast+ gzip unzip \
+  libjson-perl libtext-csv-perl libfile-slurp-perl liblwp-protocol-https-perl libwww-perl
+RUN git clone https://github.com/tseemann/abricate.git
+RUN ln -s /tmp/abricate/bin/abricate /usr/bin/abricate
+
+## Snippy
+
+RUN git clone https://github.com/tseemann/snippy.git
+RUN ln -s /tmp/snippy/bin/snippy /usr/bin/snippy
+
+## Unicycler
+
+RUN git clone https://github.com/rrwick/Unicycler.git
+WORKDIR Unicycler
+RUN python3 setup.py install
+WORKDIR /tmp
+
+## breseq
+
+RUN wget https://github.com/barricklab/breseq/releases/download/v0.33.2/breseq-0.33.2-Linux-x86_64.tar.gz
+
+## Roary
+
+RUN apt-get install roary
