@@ -188,13 +188,20 @@ RUN ln -s /tmp/snippy/bin/snippy /usr/bin/snippy
 
 RUN git clone https://github.com/rrwick/Unicycler.git
 WORKDIR Unicycler
+RUN apt-get install -y python3 python3-distutils
 RUN python3 setup.py install
 WORKDIR /tmp
 
 ## breseq
 
 RUN wget https://github.com/barricklab/breseq/releases/download/v0.33.2/breseq-0.33.2-Linux-x86_64.tar.gz
+RUN tar zxvf breseq-0.33.2-Linux-x86_64.tar.gz
+RUN ln -s ${pwd}/breseq-0.33.2-Linux-x86_64/bin/breseq /usr/bin
+RUN ln -s ${pwd}/breseq-0.33.2-Linux-x86_64/bin/gdtools /usr/bin
+
 
 ## Roary
 
-RUN apt-get install roary
+## stop tzdata asking about Geographic location
+ENV DEBIAN_FRONTEND=noninteractive 
+RUN apt-get install -y roary
