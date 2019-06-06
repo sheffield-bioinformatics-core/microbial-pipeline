@@ -50,3 +50,15 @@ fastqc /data/*
 ```
 ### HPC
 
+For various security reasons, docker is not usually available on a HPC environment such as SHARC at the University of Sheffield. However, there is a system called [singularity](https://singularity.lbl.gov/) that can perform a similar function. The following command will create an environment on HPC for running the microbial tools
+
+
+```
+singularity exec /usr/local/community/Florey/singularity/microbial-pipeline.sif
+```
+
+This image itself was built with the command
+
+```
+singularity pull docker://markdunning/microbial-pipeline
+```
