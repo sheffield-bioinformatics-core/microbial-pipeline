@@ -205,3 +205,13 @@ RUN ln -s ${pwd}/breseq-0.33.2-Linux-x86_64/bin/gdtools /usr/bin
 ## stop tzdata asking about Geographic location
 ENV DEBIAN_FRONTEND=noninteractive 
 RUN apt-get install -y roary
+
+## Clean-up and zips and tar.gz
+
+RUN rm /tmp/*.tar.gz
+RUN rm /tmp/*.zip
+RUN rm /tmp/*.tar
+RUN rm /tmp/*.tgz
+RUN rm /tmp/*.xz
+
+WORKDIR /home
