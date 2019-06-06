@@ -103,4 +103,4 @@ singularity pull docker://markdunning/microbial-pipeline
 
 ## Dockerfile
 
-The installation of the software is controlled by a [Dockerfile](docker/Dockerfile). 
+The installation of the software is controlled by a *Dockerfile* which is kept under version control in the [github repository](https://github.com/sheffield-bioinformatics-core/microbial-pipeline) assoicated with this project. Please feel free to make suggestions and changes to this file via a pull request on github. 
