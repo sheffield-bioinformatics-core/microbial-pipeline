@@ -1,7 +1,7 @@
 # Microbial Pipelnes and Software at The University of Sheffield
 
-![](TUOS_PRIMARY_LOGO_FULL COLOUR.png]
-![](logo-sm.png]
+![](TUOS_PRIMARY_LOGO_FULL COLOUR.png)
+![](logo-sm.png)
 
 ## About
 
