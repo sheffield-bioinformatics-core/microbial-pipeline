@@ -17,7 +17,7 @@ Here is a list of all the software that is available through the Docker containe
 - [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 - [Trim_Galore](https://github.com/FelixKrueger/TrimGalore)
 - [bcftools](https://samtools.github.io/bcftools/bcftools.html)
-- [vcfutils] https://github.com/lh3/samtools/blob/master/bcftools/vcfutils.pl)
+- [vcfutils](https://github.com/lh3/samtools/blob/master/bcftools/vcfutils.pl)
 - [bam2fastq](https://github.com/jts/bam2fastq)
 - [weeSAM](http://bioinformatics.cvr.ac.uk/blog/weesam-version-1-5/)
 - [Ugene](http://ugene.net/)
@@ -100,3 +100,7 @@ This image itself was built with the command
 ```
 singularity pull docker://markdunning/microbial-pipeline
 ```
+
+## Dockerfile
+
+The installation of the software is controlled by a [Dockerfile](docker/Dockerfile). 
