@@ -10,37 +10,42 @@ This is a collection of software curated by the [Florey institute](http://www.fl
 
 ## Software
 
-Bowtie2 - on CLIMB
-samtools - on CLIMB
-fastqc - on CLIMB
-Trim_Galore (https://github.com/FelixKrueger/TrimGalore) on CLIMB
-bcftools (https://samtools.github.io/bcftools/bcftools.html) on CLIMB
-vcfutils (https://github.com/lh3/samtools/blob/master/bcftools/vcfutils.pl) on CLIMB
-bam2fastq (https://github.com/jts/bam2fastq)
-weeSAM (http://bioinformatics.cvr.ac.uk/blog/weesam-version-1-5/)
-Ugene (http://ugene.net/)
-Lofreq (http://csb5.github.io/lofreq/)
-Diversitools (http://josephhughes.github.io/DiversiTools/)
-V-phaser 2 (https://www.broadinstitute.org/viral-genomics/v-phaser-2)
-ClustalW/X (http://www.clustal.org/clustal2/)
-RAxML (https://directory.fsf.org/wiki/RAxML)
-KRAKEN (https://ccb.jhu.edu/software/kraken/) on CLIMB
-ABySS (https://www.bcgsc.ca/platform/bioinfo/software/abyss/releases/2.1.0)
-SPAdes assembler (http://cab.spbu.ru/software/spades/) on CLIMB
-MIRA assembler (http://sourceforge.net/projects/mira-assembler/)
-QUAST (http://sourceforge.net/projects/quast)
-Scaffold_builder (http://github.com/metageni/Scaffold_builder)
-Gapfiller (http://www.baseclear.com/genomics/bioinformatics/basetools/gapfiller)
-Mummer (https://github.com/mummer4/mummer)
-RATT (http://ratt.sourceforge.net)
-Prokka (http://www.vicbioinformatics.com/software.prokka.shtml) on CLIMB
-Artemis (https://www.sanger.ac.uk/resources/software/artemis/#download)
-MetAMOS (https://github,com/marbl/metAMOS)
-RiboPicker (http://ribopicker.sourceforge.net/)
-GARM (https://sourceforge.net/projects/garm-meta-assem/)
-MetaPhlAN (http://huttenhower.sph.harvard.edu/metaphlan)
-DIAMOND (https://github.com/bbuchfink/diamond) + databases
-KronaTools (https://github.com/marbl/Krona/wiki/KronaTools)
+Here is a list of all the software that is installed in the 
+- [Bowtie2]
+- [samtools]
+- [fastqc]
+- [Trim_Galore] (https://github.com/FelixKrueger/TrimGalore)
+- [bcftools](https://samtools.github.io/bcftools/bcftools.html)
+- [vcfutils] (https://github.com/lh3/samtools/blob/master/bcftools/vcfutils.pl)
+- [bam2fastq] (https://github.com/jts/bam2fastq)
+- [weeSAM] (http://bioinformatics.cvr.ac.uk/blog/weesam-version-1-5/)
+- [Ugene] (http://ugene.net/)
+- [Lofreq] (http://csb5.github.io/lofreq/)
+- [Diversitools](http://josephhughes.github.io/DiversiTools/)
+- [ClustalW/X](http://www.clustal.org/clustal2/)
+- [RAxML](https://directory.fsf.org/wiki/RAxML)
+- [KRAKEN](https://ccb.jhu.edu/software/kraken/) on CLIMB
+- [ABySS](https://www.bcgsc.ca/platform/bioinfo/software/abyss/releases/2.1.0)
+- [SPAdes assembler](http://cab.spbu.ru/software/spades/) on CLIMB
+- [MIRA assembler](http://sourceforge.net/projects/mira-assembler/)
+- [QUAST](http://sourceforge.net/projects/quast)
+- [Scaffold_builder](http://github.com/metageni/Scaffold_builder)
+- [Mummer](https://github.com/mummer4/mummer)
+- [RATT](http://ratt.sourceforge.net)
+- [Prokka](http://www.vicbioinformatics.com/software.prokka.shtml) on CLIMB
+- [Artemis](https://www.sanger.ac.uk/resources/software/artemis/#download)
+- [MetAMOS](https://github,com/marbl/metAMOS)
+- [RiboPicker](http://ribopicker.sourceforge.net/)
+- [GARM](https://sourceforge.net/projects/garm-meta-assem/)
+- [MetaPhlAN](http://huttenhower.sph.harvard.edu/metaphlan)
+- [DIAMOND](https://github.com/bbuchfink/diamond) + databases
+- [KronaTools](https://github.com/marbl/Krona/wiki/KronaTools)
+- [Trimmomatic]()
+- [Abricate]()
+- [Snippy]()
+- [Unicycler]()
+- [breseq]()
+- [roary]()
 
 ## Usage
 
@@ -86,7 +91,7 @@ For various security reasons, docker is not usually available on a HPC environme
 
 
 ```
-singularity exec /usr/local/community/Florey/singularity/microbial-pipeline.sif
+singularity exec /usr/local/community/Florey/singularity/microbial-pipeline_latest.sif
 ```
 
 This image itself was built with the command
