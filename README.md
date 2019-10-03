@@ -88,11 +88,24 @@ fastqc /data/*
 ```
 ### HPC
 
-For various security reasons, docker is not usually available on a HPC environment such as SHARC at the University of Sheffield. However, there is a system called [singularity](https://singularity.lbl.gov/) that can perform a similar function. The following command will create an environment on HPC for running the microbial tools
+For various security reasons, docker is not usually available on a HPC environment such as SHARC at the University of Sheffield. However, there is a system called [singularity](https://singularity.lbl.gov/) that can perform a similar function. 
 
+You will first need to login to sharc in the usual way and launch an interactive node (adding any memory requirements with the `lrmem=` option
 
 ```
-singularity exec /usr/local/community/Florey/singularity/microbial-pipeline_latest.sif
+qrshx
+```
+
+Commands from inside the container can then be run using:-
+
+```
+singularity exec /usr/local/community/Florey/singularity/microbial-pipeline_latest.simg __TOOLNAME__ PATH_TO_YOUR_DATA
+```
+
+e.g. to QC a file with fastqc
+
+```
+singularity exec /usr/local/community/Florey/singularity/microbial-pipeline_latest.simg fastqc MY_FASTQ
 ```
 
 This image itself was built with the command
