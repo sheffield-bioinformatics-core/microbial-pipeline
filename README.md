@@ -47,6 +47,8 @@ Here is a list of all the software that is available through the Docker containe
 - [Unicycler](https://github.com/rrwick/Unicycler)
 - [breseq](http://barricklab.org/breseq)
 - [roary](https://sanger-pathogens.github.io/Roary/)
+- [MOST](https://github.com/phe-bioinformatics/MOST)
+- samtools-0.1.18 (required for above)
 
 ## Usage
 
