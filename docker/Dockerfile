@@ -215,10 +215,19 @@ RUN pip install lxml
 
 ## Clean-up and zips and tar.gz
 
+RUN wget https://github.com/marcelm/cutadapt/archive/v2.5.tar.gz
+RUN tar zxvf v2.5.tar.gz
+
 RUN rm /opt/*.tar.gz
 RUN rm /opt/*.zip
 RUN rm /opt/*.tar
 RUN rm /opt/*.tgz
 RUN rm /opt/*.xz
+
+RUN apt-get update && apt-get install -y --fix-missing python3-venv
+RUN python3 -m venv /usr/local/cutadapt
+RUN /usr/local/cutadapt/bin/pip install cutadapt
+WORKDIR /usr/local/bin
+RUN ln -s ../cutadapt/bin/cutadapt
 
 WORKDIR /home
